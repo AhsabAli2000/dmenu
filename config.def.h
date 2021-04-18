@@ -11,10 +11,16 @@ static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#ebdbb2", "#282828" },
 	[SchemeSel] = { "#ebdbb2", "#98971a" },
+ 	[SchemeSelHighlight] = { "#fabd2f", "#458588" },
+ 	[SchemeNormHighlight] = { "#d5c4a1", "#3c3836" },
 	[SchemeOut] = { "#ebdbb2", "#8ec07c" },
+    [SchemeMid] = { "#fbf1c7", "#cc241d" },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
+/* -h option; minimum height of a menu line */
+static unsigned int lineheight = 0;
+static unsigned int min_lineheight = 8;
 
 /*
  * Characters not considered part of a word while deleting words
